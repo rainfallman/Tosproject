@@ -1,63 +1,11 @@
-# TOC Project 2019
+# Finite State Machine Picture
+![](https://github.com/rainfallman/Tosproject/blob/master/fsm.pn)
 
-Template Code for TOC Project 2019
-
-A Facebook messenger bot based on a finite state machine
-
-More details in the [Slides](https://hackmd.io/p/SkpBR-Yam#/) and [FAQ](https://hackmd.io/s/B1Xw7E8kN)
-
-## Setup
-
-### Prerequisite
-* Python 3
-* Facebook Page and App
-* HTTPS Server
-
-#### Install Dependency
-```sh
-pip3 install -r requirements.txt
-```
-
-* pygraphviz (For visualizing Finite State Machine)
-    * [Setup pygraphviz on Ubuntu](http://www.jianshu.com/p/a3da7ecc5303)
-
-#### Secret Data
-
-`VERIFY_TOKEN` and `ACCESS_TOKEN` **MUST** be set to proper values.
-Otherwise, you might not be able to run your code.
-
-#### Run Locally
-You can either setup https server or using `ngrok` as a proxy.
-
-**`ngrok` would be used in the following instruction**
-
-```sh
-./ngrok http 5000
-```
-
-After that, `ngrok` would generate a https URL.
-
-#### Run the sever
-
-```sh
-python3 app.py
-```
-
-## Finite State Machine
-![fsm](./img/show-fsm.png)
-
-## Usage
-The initial state is set to `user`.
-
-Every time `user` state is triggered to `advance` to another state, it will `go_back` to `user` state after the bot replies corresponding message.
-
-* user
-	* Input: "go to state1"
-		* Reply: "I'm entering state1"
-
-	* Input: "go to state2"
-		* Reply: "I'm entering state2"
-
-
-## Reference
-[TOC-Project-2017](https://github.com/Lee-W/TOC-Project-2017) ❤️ [@Lee-W](https://github.com/Lee-W)
+##如何操作
+首先會在 "user" state
+輸入 "開始冒險"就能開始遊戲
+根據bot的回話 被雙引號所包括的文字都能輸入 也只有雙引號所包括的文字才能輸入
+例如說：如果bot回覆是"打開"寶箱跟"不打開"寶箱
+那有效的回覆就是 打開 跟不打開 其餘的輸入會沒有效果
+如果想要重設state的話請輸入"reset"
+這是一個勇者為了討伐魔王而踏上的故事
