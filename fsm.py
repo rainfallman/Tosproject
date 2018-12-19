@@ -15,7 +15,7 @@ bless=0
 potion=0
 
 bosshp=800
-bossatk=100
+bossatk=70
 bossdef=30
 
 class TocMachine(GraphMachine):
