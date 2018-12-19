@@ -611,6 +611,6 @@ class TocMachine(GraphMachine):
                 responese = send_text_message(sender_id,"reset")
                 return 'reset' in  text.lower()
         else :
-        return False
+            return False
 
 
