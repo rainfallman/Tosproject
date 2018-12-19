@@ -1,5 +1,5 @@
 # Finite State Machine Picture
-![](https://github.com/rainfallman/Tosproject/blob/master/fsm.pn)
+![](https://github.com/rainfallman/Tosproject/blob/master/fsm.png)
 
 ##如何操作
 首先會在 "user" state
