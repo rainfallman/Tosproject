@@ -590,25 +590,27 @@ class TocMachine(GraphMachine):
         global bosshp
         global bossatk
         global bossdef
-        gender="性別不明"
-        race="種族不明"
-        career="初新者"
-        startitem="空空的行囊"
-        hp=200
-        atk=10
-        defence=10
-        coin=100
-        friend=0
-        bless=0
-        potion=0
-        bosshp=800
-        bossatk=100
-        bossdef=30
-        if event.get("message"):
-            text = event['message']['text']
-            sender_id = event['sender']['id']
-            responese = send_text_message(sender_id,"reset")
-            return 'reset' in  text.lower()
+        if 'reset' in  text.lower() :
+            gender="性別不明"
+            race="種族不明"
+            career="初新者"
+            startitem="空空的行囊"
+            hp=200
+            atk=10
+            defence=10
+            coin=100
+            friend=0
+            bless=0
+            potion=0
+            bosshp=800
+            bossatk=100
+            bossdef=30
+            if event.get("message"):
+                text = event['message']['text']
+                sender_id = event['sender']['id']
+                responese = send_text_message(sender_id,"reset")
+                return 'reset' in  text.lower()
+        else :
         return False
 
 
