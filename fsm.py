@@ -575,6 +575,38 @@ class TocMachine(GraphMachine):
         sender_id = event['sender']['id']
         responese = send_text_message(sender_id,"魔王打敗你了,再也沒有人能夠阻止魔王的野心了")
 
-    
+    def is_going_to_reset(self,event):
+        global gender
+        global race
+        global career
+        global startitem
+        global hp
+        global atk
+        global defence
+        global coin
+        global friend
+        global bless
+        global potion
+        global bosshp
+        global bossatk
+        global bossdef
+        gender="性別不明"
+        race="種族不明"
+        career="初新者"
+        startitem="空空的行囊"
+        hp=200
+        atk=10
+        defence=10
+        coin=100
+        friend=0
+        bless=0
+        potion=0
+        bosshp=800
+        bossatk=100
+        bossdef=30
+        if event.get("message"):
+            text = event['message']['text']
+            return 'reset' in  text.lower()
+        return False
 
 

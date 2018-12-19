@@ -292,6 +292,15 @@ machine = TocMachine(
             'conditions': 'is_going_to_lose'
         },
         {
+            'trigger': 'advance',
+            'source': [
+                'win',
+                'lose'
+            ],
+            'dest': 'user',
+            'conditions': 'is_going_to_reset'
+        },
+        {
             'trigger': 'go_back',
             'source': [
                 'test'
