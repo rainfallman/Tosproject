@@ -3,7 +3,7 @@ import os
 from fsm import TocMachine
 
 
-VERIFY_TOKEN = os.environ['VERIFY_TOKEN']
+VERIFY_TOKEN = os.environ['VERIFY_TOKEN'] if 'VERIFY_TOKEN' in os.environ else "  "
 machine = TocMachine(
     states=[
         'user',
@@ -343,6 +343,6 @@ def show_fsm():
     machine.get_graph().draw('fsm.png', prog='dot', format='png')
     return static_file('fsm.png', root='./', mimetype='image/png')
 
-PORT =os.environ['PORT']
+PORT =os.environ['PORT'] if 'PORT' in os.environ else 5000
 if __name__ == "__main__":
     run(host="0.0.0.0", port=PORT, debug=True, reloader=True)

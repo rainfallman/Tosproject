@@ -2,7 +2,7 @@ import requests
 import os
 
 GRAPH_URL = "https://graph.facebook.com/v2.6"
-ACCESS_TOKEN = os.environ['ACCESS_TOKEN']
+ACCESS_TOKEN = os.environ['ACCESS_TOKEN'] if 'ACCESS_TOKEN' in os.environ else "  "
 
 
 def send_text_message(id, text):
