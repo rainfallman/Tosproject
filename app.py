@@ -332,10 +332,10 @@ def webhook_handler():
         return 'OK'
 
 
-#@route('/show-fsm', methods=['GET'])
-#def show_fsm():
-#    machine.get_graph().draw('fsm.png', prog='dot', format='png')
-#    return static_file('fsm.png', root='./', mimetype='image/png')
+@route('/show-fsm', methods=['GET'])
+def show_fsm():
+    machine.get_graph().draw('fsm.png', prog='dot', format='png')
+    return static_file('fsm.png', root='./', mimetype='image/png')
 
 PORT =os.environ['PORT']
 if __name__ == "__main__":
