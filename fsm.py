@@ -606,6 +606,8 @@ class TocMachine(GraphMachine):
         bossdef=30
         if event.get("message"):
             text = event['message']['text']
+            sender_id = event['sender']['id']
+            responese = send_text_message(sender_id,"reset")
             return 'reset' in  text.lower()
         return False
 

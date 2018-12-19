@@ -293,10 +293,7 @@ machine = TocMachine(
         },
         {
             'trigger': 'advance',
-            'source': [
-                'win',
-                'lose'
-            ],
+            'source': '*'
             'dest': 'user',
             'conditions': 'is_going_to_reset'
         },
