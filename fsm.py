@@ -614,4 +614,12 @@ class TocMachine(GraphMachine):
                 return 'reset' in  text.lower()
         return False
 
+    def is_going_to_help(self,event):
+        if event.get("message"):
+            text = event['message']['text']
+            return 'help' in  text.lower()
+        return False
+    def on_enter_help(self,event):
+        sender_id = event['sender']['id']
+        responese = send_text_message(sender_id,"輸入 \"開始冒險\"就能開始遊戲\n根據bot的回話 被雙引號所包括的文字都能輸入 也只有雙引號所包括的文字才能輸入\n例如說：如果bot回覆是\"打開\"寶箱跟\"不打開\"寶箱\n那有效的回覆就是 打開 跟不打開 其餘的輸入會沒有效果\n如果想要重設state的話請輸入\"reset\"\n這是一個勇者為了討伐魔王而踏上的故事\n過程的每個選項都會導致最後是否能打贏魔王\n多次嘗試一定可以贏過魔王")
 

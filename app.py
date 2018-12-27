@@ -7,6 +7,7 @@ VERIFY_TOKEN = os.environ['VERIFY_TOKEN'] if 'VERIFY_TOKEN' in os.environ else "
 machine = TocMachine(
     states=[
         'user',
+        'help',
         'test',
         'setinfo',
             'setsex',
@@ -49,6 +50,12 @@ machine = TocMachine(
             'source': 'user',
             'dest': 'test',
             'conditions': 'is_going_to_test'
+        },
+        {
+            'trigger': 'advance',
+            'source': 'user',
+            'dest': 'help',
+            'conditions': 'is_going_to_help'
         },
         {
             'trigger': 'advance',
@@ -300,7 +307,8 @@ machine = TocMachine(
         {
             'trigger': 'go_back',
             'source': [
-                'test'
+                'test',
+                'help'
             ],
             'dest': 'user'
         }
